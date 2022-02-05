@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
+import './css/reset.css';
+import './css/styles.css';
+import './css/switcher.css'
 import App from './App';
 
 ReactDOM.render(
