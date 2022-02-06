@@ -2,14 +2,17 @@ import {createGlobalStyle} from "styled-components";
 import pictures from './img/space.jpg'
 import pictureWite from './img/stardust.jpg'
 
+//const a = require("./img/space.jpg")
 export const darkTheme = {
+    pic: {pictures},
     accent: '#FFC700',
     main: '#fff',
     bgd: '#222527',
     modalBgd: 'rgb(239 236 236 / 90%)',
     btnText: '#060803', 
     moto: '#7A7982',
-    backgroundImage: { pictures }
+    backgroundImage: require('./img/space.jpg')
+     
   };
   
   export const lightTheme = {
@@ -19,7 +22,8 @@ export const darkTheme = {
     modalBgd: 'rgb(21 20 29 / 90%)',
     btnText: '#fff',
     moto: '#fff',
-    backgroundImage:{ pictureWite }
+    backgroundImage: require('./img/stardust.jpg')
+    
   };
   
   export const GlobalStyles = createGlobalStyle`
@@ -32,12 +36,15 @@ export const darkTheme = {
     --theme-moto-text: ${props => props.theme.main};
    }
    .about {
-    background-image: ${props => props.theme.backgroundImage}  
+    background-image:url(${props => props.theme.backgroundImage}) ; 
    }
    .codex--light{
-    background-image:  ${props => props.theme.backgroundImage} ;
+    background-image:url(${props => props.theme.backgroundImage}) ;
    }
    .about--light{
-    background-image:  ${props => props.theme.backgroundImage} ;
+    background-image:url(${props => props.theme.backgroundImage}) ;
+   }
+   .codex{
+    background-image: url(${props => props.theme.backgroundImage}) ;
    }
     `
