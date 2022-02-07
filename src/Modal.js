@@ -1,11 +1,12 @@
 import React from "react";
 
-function Modal(){
+function Modal(props){
+    const fl = props.flag
     return(
-        <div className="modal-container" id="modal-form">
+        <div className="modal-container" id="modal-form" style={{ visibility: fl }}>
         <form action="#" className="modal-form" netlify>
              
-             <button className="close-icon" id="modal-form-close">
+             <button className="close-icon" id="modal-form-close" onClick={()=>{props.func('hidden') }}>
                  <svg width="14" height="14" viewBox="0 0 14 14" fill="white" xmlns="http://www.w3.org/2000/svg">
                      <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" />
                  </svg>
@@ -24,7 +25,7 @@ function Modal(){
                      <input type="email" className="modal-form-email" id="modal-form-email" name="Email" required/>
                  </div>
                 
-         <button type="submit" className="modal-form-submit">Принести клятву</button>
+         <button  className="modal-form-submit" onClick={()=>{ props.funcSuccess('visible') ;   console.log('work')}}>Принести клятву</button>
  
         </form>
     </div>

@@ -48,7 +48,7 @@ function SectionOne(props){
                         <p className="about-positions-text">Верховный генерал</p> 
                     </li> 
                 </ul>
-                    <button className="about-button" id="call-form-btn">
+                    <button className="about-button" id="call-form-btn" onClick={()=>{  props.setFlag() }}>
                     Принести клятву верности
                     </button>
             
