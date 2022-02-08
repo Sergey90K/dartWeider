@@ -25,11 +25,27 @@ function Modal(props){
                      <input type="email" className="modal-form-email" id="modal-form-email" name="Email" required/>
                  </div>
                 
-         <button  className="modal-form-submit" onClick={()=>{ props.funcSuccess('visible') ;   console.log('work')}}>Принести клятву</button>
+         <button  className="modal-form-submit" onClick={()=>{ sendData(props)  }}>Принести клятву</button>
  
         </form>
     </div>
     )
 }
 
+function sendData(props){
+    let name = document.getElementById("modal-form-name").value;
+    let email = document.getElementById("modal-form-email").value;
+    if( !(name === "") && !(email === "")){
+        alert("Здесь могла бы быть отправка в базу данных или другие функции)) ")
+        props.func('hidden');
+        props.funcSucccess('visible');
+        document.getElementById("modal-form-name").value("");
+        document.getElementById("modal-form-email").value("");
+       
+    }else {
+        alert("Данны введены не верно!");
+        document.getElementById("modal-form-name").value("");
+        document.getElementById("modal-form-email").value("");
+    }
+}
 export default Modal;
