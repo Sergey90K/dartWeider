@@ -1,13 +1,26 @@
 import React from "react";
+import { motion } from 'framer-motion';
+
+const pictureAnimations = {
+    hidden: {
+        x: -100,
+        opacity: 0,
+    },
+    visible: custom => ( {
+        x: 0,
+        opacity: 1,
+        transition: {delay: custom * 0.2}
+    })
+}
 
 function SectionSecond(){
     return(
-        <section className="achivements">
+        <motion.section  initial = "hidden"  whileInView = "visible" viewport={{amount:0.2}}  className="achivements">
         <div className="container">
-          <h3 className="achivements-header">Профессиональные и личные достижения</h3>  
+          <motion.h3 custom={1} variants={pictureAnimations} className="achivements-header">Профессиональные и личные достижения</motion.h3>  
 
           <div className="achivements-items">
-              <div className="achivements-item">
+              <motion.div custom={2} variants={pictureAnimations}  className="achivements-item">
                 <div className="achivements-icon">
                     <svg width="60" height="42" viewBox="0 0 60 42" fill="#FFC700" xmlns="http://www.w3.org/2000/svg">
                         <path d="M55.2006 37.2802C55.4477 37.0331 55.4477 36.5389 55.2006 36.2918L48.282 29.3732C48.0349 29.1261 47.5407 29.1261 47.2936 29.3732L47.1701 29.6203C46.923 29.8674 46.923 30.3616 47.1701 30.6087L54.0887 37.5273C54.3358 37.7744 54.83 37.7744 55.077 37.5273L55.2006 37.2802Z" />
@@ -26,8 +39,8 @@ function SectionSecond(){
                 </div>
                   <p className="achivements-item-header"> Долгосрочное планирование:</p>
                   <p className="achivements-item-text">исполнил пророчество - уравновесил Силу сравняв количество Джедаев и Ситхов</p>
-                </div>
-              <div className="achivements-item">
+                </motion.div>
+              <motion.div custom={3} variants={pictureAnimations}  className="achivements-item">
                   <div className="achivements-icon">
                     <svg width="50" height="51" viewBox="0 0 50 51" fill="#FFC700" xmlns="http://www.w3.org/2000/svg">
                         <path d="M32.9168 7.0835C31.4585 7.396 30.3126 8.54183 30.0001 10.0002H32.9168V7.0835Z" />
@@ -42,8 +55,8 @@ function SectionSecond(){
                   </div>
                   <p className="achivements-item-header"> Антикризисный менеджмент:</p>
                   <p className="achivements-item-text">завершил долгострой “Звезду смерти”</p>
-              </div>
-              <div className="achivements-item">
+              </motion.div>
+              <motion.div custom={4} variants={pictureAnimations}  className="achivements-item">
                   <div className="achivements-icon">
                     <svg width="41" height="49" viewBox="0 0 41 49" fill="#FFC700" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -55,8 +68,8 @@ function SectionSecond(){
                   
                   <p className="achivements-item-header">Управление персоналом:</p>
                   <p className="achivements-item-text">Более миллиона солдат и офицеров на борту “Звезды смерти”</p>
-              </div>
-              <div className="achivements-item">
+              </motion.div>
+              <motion.div custom={5} variants={pictureAnimations}  className="achivements-item">
                   <div className="achivements-icon">
                     <svg width="37" height="51" viewBox="0 0 37 51" fill="#FFC700" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -79,10 +92,10 @@ function SectionSecond(){
                   </div>
                   <p className="achivements-item-header">Разработка систем мотивации:</p>
                   <p className="achivements-item-text">метод удушения <br/> провинившихся сотрудников на расстоянии, с помощью Силы</p>
-              </div>
+              </motion.div>
           </div>
         </div>
-    </section>
+    </motion.section>
     )
 }
 

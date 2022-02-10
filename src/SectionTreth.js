@@ -1,15 +1,28 @@
 import React from "react";
+import { motion } from 'framer-motion';
+
+const pictureAnimations = {
+    hidden: {
+        x: -100,
+        opacity: 0,
+    },
+    visible: custom => ( {
+        x: 0,
+        opacity: 1,
+        transition: {delay: custom * 0.2}
+    })
+}
 
 function SectionThreth(){
     return(
-        <section className="codex">
+        <motion.section initial = "hidden"  whileInView = "visible" viewport={{amount:0.2}} className="codex">
         <div className="container"> 
             
-            <div className="codex-left-side">
+            <motion.div custom={1} variants={pictureAnimations} className="codex-left-side">
                 <p className="codex-motto">“You don't know the <br/> power of the dark <br/> side!”</p>
-            </div>
+            </motion.div>
 
-            <div className="codex-right-side">
+            <motion.div custom={2} variants={pictureAnimations} className="codex-right-side">
                 <p className="codex-title">Кодекс ситхов:</p>
                     <p className="codex-text">Спокойствие — ложь, есть только страсть.</p>
                     <p className="codex-text">Со Страстью я приобретаю Силу.</p>
@@ -19,9 +32,9 @@ function SectionThreth(){
                     <p className="codex-text codex-text--last">И Великая Сила освободит меня.</p>
         <p className="codex-text">* Принося клятву верности ты обязуешься следовать кодексу <br/> ситхов, расти над собой увеличивая мощь Империи
         </p>
-            </div>
+            </motion.div>
         </div>
-    </section>
+    </motion.section>
     )
 }
 

@@ -1,14 +1,27 @@
 import React from "react";
+import { motion } from 'framer-motion';
+
+const pictureAnimations = {
+    hidden: {
+        x: -100,
+        opacity: 0,
+    },
+    visible: custom => ( {
+        x: 0,
+        opacity: 1,
+        transition: {delay: custom * 0.2}
+    })
+}
 
 function Footer(){
     return(
-        <footer className="footer">
+        <motion.footer initial = "hidden"  whileInView = "visible" className="footer">
         <div className="container">
-                     <p className="footer-title">
+                     <motion.p custom={1} variants={pictureAnimations} className="footer-title">
                              Переход на темную сторону Силы ставит тебя вне законов Республики, принося клятву, ты добровольно вступаешь в войну на
                              уничтожение.
-                     </p>
-                 <svg width="48" height="40" viewBox="0 0 48 40" fill="#FFC700" xmlns="http://www.w3.org/2000/svg">
+                     </motion.p>
+                 <motion.svg custom={2} variants={pictureAnimations} width="48" height="40" viewBox="0 0 48 40" fill="#FFC700" xmlns="http://www.w3.org/2000/svg">
                      <path d="M47.8001 5.2L41.5001 3.1V0H26.9001V3.1L20.6001 5.2V12.3H47.8001V5.2Z" />
                      <path d="M36.7001 20.2L36.3 22.7C36.6 22.6 37.0001 22.5 37.4001 22.5C38.2001 22.5 38.9 22.7 39.5 23.1L40 20.1H36.7001V20.2Z" />
                      <path d="M36.3999 30.2L37.3999 34H40.6999L39.4999 29.6C38.5999 30.3 37.2999 30.5 36.3999 30.2Z" />
@@ -28,9 +41,9 @@ function Footer(){
                      <path d="M6.9 10.3C7.7 10.3 8.3 9.7 8.3 8.9C8.3 8.1 7.7 7.5 6.9 7.5C6.2 7.5 5.5 8.1 5.5 8.9C5.5 9.7 6.1 10.3 6.9 10.3Z" />
                      <path d="M18.6 6.09998H17.2V10.8H18.6V6.09998Z" />
                      <path d="M15.2999 6.09998H13.8999V10.8H15.2999V6.09998Z" />
-                 </svg>
+                 </motion.svg>
          </div>
-    </footer>  
+    </motion.footer>  
     )
 }
 
