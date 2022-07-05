@@ -1,3 +1,4 @@
+#JS, React, Framer-motion
 This project was made thanks to the provided layout - https://github.com/SlavkaYaroslavka
 
 ## Available Scripts
